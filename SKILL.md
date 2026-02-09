@@ -76,44 +76,46 @@ user_invocable: true
 - **餐巾纸图**: 如果这本书只能留下一张图，画什么？（ASCII）
 - **一句话**: 如果只能用一句话概括，说什么？
 
-### 步骤 4：生成 Org 报告
+### 步骤 4：生成 Markdown 报告
 
-使用 Write 工具，按以下模板生成 org-mode 文件。
+使用 Write 工具，按以下模板生成 Markdown 文件。
 
 **重要**：报告必须包含三轮压缩的完整内容 + 最终的餐巾纸输出。
 
-```org
-#+title:      {书名}
-#+date:       [{YYYY-MM-DD Day HH:MM}]
-#+filetags:   :read:xray:book:
-#+identifier: {YYYYMMDDTHHMMSS}
-#+author:     {作者}
+```markdown
+---
+title: "{书名}"
+date: {YYYY-MM-DD Day HH:MM}
+tags: [read, xray, book]
+identifier: {YYYYMMDDTHHMMSS}
+author: "{作者}"
+---
 
-* NAPKIN | 餐巾纸
+# NAPKIN | 餐巾纸
 
-** 公式
+## 公式
 
-#+begin_example
+```
 +----------------------------------------------------------+
 |                                                          |
 |   {餐巾纸公式}                                            |
 |                                                          |
 +----------------------------------------------------------+
-#+end_example
+```
 
 {一句话解释公式含义}
 
-** 一句话
+## 一句话
 
 {如果只能用一句话概括这本书}
 
-** 草图
+## 草图
 
-#+begin_example
+```
 {餐巾纸图: 用 ASCII 绘制核心概念，要求一眼能懂}
-#+end_example
+```
 
-* ROUND 1: SKELETON | 骨架扫描
+# ROUND 1: SKELETON | 骨架扫描
 
 "这本书在说什么"
 
@@ -128,15 +130,15 @@ user_invocable: true
 
 **论证结构**: {演绎/归纳/案例/对比}
 
-* ROUND 2: DISSECTION | 血肉解剖
+# ROUND 2: DISSECTION | 血肉解剖
 
 "凭什么这么说"
 
 **论证链**:
 
-#+begin_example
+```
 {前提1} --> {前提2} --> ... --> {结论}
-#+end_example
+```
 
 **关键证据**:
 1. {证据1}
@@ -151,7 +153,7 @@ user_invocable: true
 - {何时失效1}
 - {何时失效2}
 
-* ROUND 3: SOUL | 灵魂提取
+# ROUND 3: SOUL | 灵魂提取
 
 "还能怎么用"
 
@@ -165,19 +167,19 @@ user_invocable: true
 
 **行动触发**: {读完应该做什么不同的事}
 
-* STRUCTURE MAP | 全书结构图
+# STRUCTURE MAP | 全书结构图
 
-#+begin_example
+```
 {全书逻辑结构图: 用纯 ASCII 绘制，展示核心概念间的关系}
-#+end_example
+```
 ```
 
 ### 步骤 5：保存并打开
 
 1. 生成时间戳：使用 Bash 执行 `date +%Y%m%dT%H%M%S` 获取当前时间
-2. 文件名格式：`{时间戳}--{书名}__book.org`
+2. 文件名格式：`{时间戳}--{书名}__book.md`
    - 书名：中文保留，英文小写，空格转连字符
-   - 示例：`20260207T220000--思考快与慢__book.org`
+   - 示例：`20260207T220000--思考快与慢__book.md`
 3. 保存路径：`~/Documents/notes/{文件名}`
 4. 使用 Bash 执行：`open ~/Documents/notes/{文件名}`
 
@@ -188,7 +190,7 @@ user_invocable: true
 - **批判视角**: 必须指出隐形假设和边界条件
 - **连接导向**: 必须与已有知识建立连接
 - **行动导向**: 必须产出可执行的行动触发
-- **ASCII Art**: 仅用纯 ASCII 基础符号 (+, -, |, >, <, /, \, *, =, .)，不用 Unicode
+- **ASCII Art**: 仅用纯 ASCII 基础符号 (+, -, |, >, <, /, \, *, =, .)，不用 Unicode，使用 Markdown 代码块包裹
 
 ## 唤醒指令
 
