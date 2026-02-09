@@ -7,7 +7,7 @@
 - 支持书名、书籍内容或链接输入
 - 三轮认知压缩：骨架扫描 → 血肉解剖 → 灵魂提取
 - 餐巾纸极限压缩：公式 + 草图 + 一句话
-- 生成 Org-mode 格式报告，含 ASCII 结构图
+- 生成 Markdown 格式报告，含 ASCII 结构图
 
 ## 安装
 
@@ -25,7 +25,7 @@ git clone https://github.com/lijigang/ljg-skill-xray-book.git ~/.claude/skills/l
 
 ## 输出示例
 
-生成的 Org-mode 报告包含：
+生成的 Markdown 报告包含：
 
 - **NAPKIN** — 餐巾纸公式、一句话、草图
 - **ROUND 1: SKELETON** — 骨架扫描，全局结构
